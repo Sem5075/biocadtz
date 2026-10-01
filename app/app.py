@@ -5,25 +5,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    hostname = os.environ.get("HOSTNAME", "unknown")
-    node_name = os.environ.get("NODE_NAME", "unknown")
-    pod_name = os.environ.get("POD_NAME", hostname)
-    namespace = os.environ.get("POD_NAMESPACE", "unknown")
-    image_tag = os.environ.get("IMAGE_TAG", "unknown")
-
     return f"""
 <html>
-<head><title>testapp</title></head>
+<head><title>tzapp</title></head>
 <body>
-  <h1>testapp</h1>
-  <ul>
-    <li><b>Pod / Container:</b> {pod_name}</li>
-    <li><b>Node:</b> {node_name}</li>
-    <li><b>Namespace:</b> {namespace}</li>
-    <li><b>Hostname:</b> {hostname}</li>
-    <li><b>Image Tag:</b> {image_tag}</li>
-    <li><b>здесь могла быть ваша реклама</b></li>
-  </ul>
+  <h1>tzapp</h1>
+<b>Hello world</b>
 </body>
 </html>
 """, 200
